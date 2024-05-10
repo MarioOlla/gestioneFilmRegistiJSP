@@ -5,10 +5,12 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -37,10 +39,11 @@ public class Film {
 	private LocalDateTime createDateTime;
 	@UpdateTimestamp
 	private LocalDateTime updateDateTime;
-	
-	@ManyToOne
-    @JoinColumn(name="regista_id", nullable=false)
-    private Regista regista;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinTable(name = "regista_film", joinColumns = @JoinColumn(name = "id_film"), inverseJoinColumns = @JoinColumn(name = "id_regista"))
+	@JoinColumn(name = "id_regista", nullable = false)
+	private Regista regista;
 
 	public Film() {
 
