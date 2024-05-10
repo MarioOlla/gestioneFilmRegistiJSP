@@ -116,7 +116,7 @@ public class Regista {
 	}
 
 	public void setFilms(Set<Film> films) {
-		films = films;
+		this.films = films;
 	}
 	
 }
