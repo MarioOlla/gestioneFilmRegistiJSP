@@ -86,7 +86,7 @@ public class RegistaServiceImpl implements RegistaService{
 		try {
 			entityManager.getTransaction().begin();
 			registaDao.setEntityManager(entityManager);
-			registaDao.delete(id);
+			registaDao.delete(registaDao.read(id));
 			entityManager.getTransaction().commit();
 		} catch (Exception e){
 			entityManager.getTransaction().rollback();

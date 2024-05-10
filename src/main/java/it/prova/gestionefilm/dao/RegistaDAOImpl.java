@@ -38,11 +38,11 @@ public class RegistaDAOImpl implements RegistaDAO{
 	}
 
 	@Override
-	public void delete(Long id) throws Exception {
-		if (id == null) {
+	public void delete(Regista input) throws Exception {
+		if (input == null) {
 			throw new Exception("Errore valore input.");
 		}
-		entityManager.remove(entityManager.merge(id));
+		entityManager.remove(entityManager.merge(input));
 	}
 
 	@Override
