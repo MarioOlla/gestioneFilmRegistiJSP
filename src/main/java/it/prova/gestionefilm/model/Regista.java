@@ -2,10 +2,12 @@ package it.prova.gestionefilm.model;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -37,8 +39,8 @@ public class Regista {
 	@UpdateTimestamp
 	private LocalDateTime updateDateTime;
 	
-	@OneToMany(mappedBy = "film")
-	private Set<Film> films; 
+	@OneToMany(mappedBy = "film", fetch = FetchType.LAZY)
+	private Set<Film> films = new HashSet<>(); 
 	
 	public Regista() {
 		

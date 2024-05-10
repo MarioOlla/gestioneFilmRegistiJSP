@@ -14,7 +14,7 @@ public interface IBaseDAO<T> {
 	
 	public void update(T input) throws Exception; 
 	
-	public void delete(T input) throws Exception; 
+	public void delete(Long id) throws Exception; 
 	
 	public void setEntityManager(EntityManager entityManager); 
 	
