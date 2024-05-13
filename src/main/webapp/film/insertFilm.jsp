@@ -45,7 +45,7 @@
 							<h6 class="card-title">I campi con <span class="text-danger">*</span> sono obbligatori</h6>
 		
 		
-							<form method="post" action="ExecuteInsertProdottoServlet" class="row g-3" novalidate="novalidate">
+							<form method="post" action="ExecuteInsertFilmServlet" class="row g-3" novalidate="novalidate">
 							
 								<% Film filmInPagina = (Film)request.getAttribute("insert_film_attr"); %>
 							
