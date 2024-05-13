@@ -60,6 +60,7 @@ public class Film {
 		this.updateDateTime = updateDateTime;
 	}
 	
+<<<<<<< HEAD
 	public Film(Long id, String titolo, String genere, LocalDate dataPubblicazione, Integer minutiDurata, LocalDateTime updateDateTime) {
 		this.id = id;
 		this.titolo = titolo;
@@ -69,6 +70,8 @@ public class Film {
 		this.updateDateTime = updateDateTime;
 	}
 	
+=======
+>>>>>>> b4e3e4ae7e98a98e5818aa7fe26da010800ca7c4
 	public Film(String titolo, String genere) {
 		this.titolo = titolo;
 		this.genere = genere;
