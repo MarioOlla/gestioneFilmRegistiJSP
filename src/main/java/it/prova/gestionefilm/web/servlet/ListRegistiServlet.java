@@ -26,11 +26,7 @@ public class ListRegistiServlet extends HttpServlet{
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
 			return;
 		}
-<<<<<<< HEAD
 		request.getRequestDispatcher("/regista/results.jsp").forward(request, response);
-=======
-		request.getRequestDispatcher("/gestionefilm/results.jsp").forward(request, response);
->>>>>>> d2a80dcc25ec6d2acfb963eff91ac13d02ade644
 	}
 
 }
