@@ -59,6 +59,11 @@ public class Film {
 		this.createDateTime = createDateTime;
 		this.updateDateTime = updateDateTime;
 	}
+	
+	public Film(String titolo, String genere) {
+		this.titolo = titolo;
+		this.genere = genere;
+	}
 
 	public Long getId() {
 		return id;

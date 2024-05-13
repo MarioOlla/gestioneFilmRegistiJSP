@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 
 import it.prova.gestionefilm.dao.RegistaDAO;
 import it.prova.gestionefilm.model.Regista;
+import it.prova.gestionefilm.web.listener.LocalEntityManagerFactoryListener;
 
 public class RegistaServiceImpl implements RegistaService{
 
