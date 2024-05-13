@@ -23,6 +23,17 @@ public class UtilityRegistaForm {
 		return result;
 	}
 
+	public static Regista updateRegistaFromParams(String nomeInputParam, String cognomeInputParam,
+			String nicknameInputParam, String dataDiNascitaInputParam, String updateDateTimeInputParam) {
+
+		Regista result = new Regista(nomeInputParam, cognomeInputParam, nicknameInputParam);
+
+		result.setDataDiNascita(parseDataDiNascitaFromString(dataDiNascitaInputParam));
+		result.setUpdateDateTime(parseUpdateDateFromString(updateDateTimeInputParam));
+
+		return result;
+	}
+
 	public static boolean validateRegistaBean(Regista registaToBeValidate) {
 		if (StringUtils.isBlank(registaToBeValidate.getNome()) || StringUtils.isBlank(registaToBeValidate.getCognome())
 				|| StringUtils.isBlank(registaToBeValidate.getNickname())
