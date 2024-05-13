@@ -62,7 +62,7 @@
 
 			<div class="p-5 mb-4 bg-light rounded-3">
 				<div class="container-fluid py-5">
-					<h1 class="display-5 fw-bold">Benvenuto alla Gestione Prodotti</h1>
+					<h1 class="display-5 fw-bold">Benvenuto alla Gestione Film</h1>
 					<p class="col-md-8 fs-4">Using a series of utilities, you can
 						create this jumbotron, just like the one in previous versions of
 						Bootstrap.</p>
@@ -83,11 +83,11 @@
 						<svg class="bi" width="1em" height="1em">
 							<use xlink:href="#collection" /></svg>
 					</div>
-					<h2>Lista Elementi</h2>
+					<h2>Lista Film</h2>
 					<p>Paragraph of text beneath the heading to explain the
 						heading. We'll add onto it with another sentence and probably just
 						keep going until we run out of words.</p>
-					<a href="ListProdottiServlet" class="icon-link"> Vai alla
+					<a href="ListFilmServlet" class="icon-link"> Vai alla
 						funzionalità <svg class="bi" width="1em" height="1em">
 							<use xlink:href="#chevron-right" /></svg>
 					</a>
@@ -97,7 +97,7 @@
 						<svg class="bi" width="1em" height="1em">
 							<use xlink:href="#people-circle" /></svg>
 					</div>
-					<h2>Inserisci Nuovo</h2>
+					<h2>Inserisci Nuovo Film</h2>
 					<p>Paragraph of text beneath the heading to explain the
 						heading. We'll add onto it with another sentence and probably just
 						keep going until we run out of words.</p>
