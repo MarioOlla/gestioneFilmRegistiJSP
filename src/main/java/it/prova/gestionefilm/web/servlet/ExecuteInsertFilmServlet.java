@@ -23,17 +23,11 @@ public class ExecuteInsertFilmServlet extends HttpServlet{
 		String genereInputParam = request.getParameter("genere");
 		String dataPubblicazioneInputParam = request.getParameter("data_pubblicazione");
 		String minutiDurataInputParam = request.getParameter("minuti_durata");
-<<<<<<< HEAD
 		String createDateTimeInputParam = request.getParameter("data_creazione"); 
 		String updateDateTimeInputParam = request.getParameter("data_aggiornamento"); 
 		
 		Film filmInstance = UtilityFilmForm.createFilmFromParams(titoloInputParam, genereInputParam, 
 				dataPubblicazioneInputParam, minutiDurataInputParam, createDateTimeInputParam, updateDateTimeInputParam); 
-=======
-		
-		Film filmInstance = UtilityFilmForm.createFilmFromParams(titoloInputParam, genereInputParam, 
-				dataPubblicazioneInputParam, minutiDurataInputParam, genereInputParam, genereInputParam); 
->>>>>>> b4e3e4ae7e98a98e5818aa7fe26da010800ca7c4
 		
 		if (!UtilityFilmForm.validateFilmBean(filmInstance)) {
 			request.setAttribute("insert_film_attr", filmInstance);
