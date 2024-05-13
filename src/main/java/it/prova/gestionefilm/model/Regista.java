@@ -39,7 +39,7 @@ public class Regista {
 	@UpdateTimestamp
 	private LocalDateTime updateDateTime;
 	
-	@OneToMany(mappedBy = "film", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "regista", fetch = FetchType.LAZY)
 	private Set<Film> films = new HashSet<>(); 
 	
 	public Regista() {
