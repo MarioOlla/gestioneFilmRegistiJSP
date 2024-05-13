@@ -23,19 +23,19 @@ public class UtilityFilmForm {
 		result.setDataPubblicazione(parseDataPubblicazioneFromString(dataPubblicazioneInputParam));
 		result.setCreateDateTime(parseCreateDateTimeFromString(createDateTimeInputParam));
 		result.setUpdateDateTime(parseUpdateDateFromString(updateDateTimeInputParam));
-		
-		return result; 
+
+		return result;
 	}
-	
+
 	public static Film updateFilmFromParams(String titoloInputParam, String genereInputParam, String dataPubblicazioneInputParam,
 			String minutiDurataInputParam, String updateDateTimeInputParam) {
-		
-		Film result = new Film(titoloInputParam, genereInputParam); 
-		
+
+		Film result = new Film(titoloInputParam, genereInputParam);
+
 		if (NumberUtils.isCreatable(minutiDurataInputParam)) {
 			result.setMinutiDurata(Integer.parseInt(minutiDurataInputParam));
 		}
-		
+
 		result.setDataPubblicazione(parseDataPubblicazioneFromString(dataPubblicazioneInputParam));
 		result.setUpdateDateTime(parseUpdateDateFromString(updateDateTimeInputParam));
 		

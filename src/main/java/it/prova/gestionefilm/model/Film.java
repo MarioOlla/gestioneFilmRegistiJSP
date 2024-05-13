@@ -68,7 +68,6 @@ public class Film {
 		this.minutiDurata = minutiDurata;
 		this.updateDateTime = updateDateTime;
 	}
-	
 	public Film(String titolo, String genere) {
 		this.titolo = titolo;
 		this.genere = genere;
