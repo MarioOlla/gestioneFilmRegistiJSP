@@ -57,11 +57,11 @@ public class Regista {
 		this.updateDateTime = updateDateTime;
 	}
 
-	public Regista(String nome, String cognome, String nickname) {
-		this.nome = nome;
-		this.cognome = cognome;
-		this.nickname = nickname;
-	}
+public Regista(String nome, String cognome, String nickname) {
+    this.nome = nome;
+    this.cognome = cognome;
+    this.nickname = nickname;
+}
 
 	public Long getId() {
 		return id;
