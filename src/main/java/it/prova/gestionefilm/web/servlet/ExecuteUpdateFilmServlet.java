@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -12,7 +13,7 @@ import it.prova.gestionefilm.service.MyServiceFactory;
 import it.prova.gestionefilm.utility.UtilityFilmForm;
 
 @WebServlet("/ExecuteUpdateFilmServlet")
-public class ExecuteUpdateFilmServlet {
+public class ExecuteUpdateFilmServlet extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
 

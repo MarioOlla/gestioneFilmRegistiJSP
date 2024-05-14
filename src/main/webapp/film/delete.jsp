@@ -52,7 +52,7 @@
 					    
 					    <div class='card-footer'>
 					        
-					        <form action="ExecuteDeleteFilmServlet" method="post">
+					        <form action="ExecuteRemoveFilmServlet" method="post">
 					       		 <a href="ListFilmServlet" class='btn btn-outline-secondary' style='width:80px'>
 					        	    <i class='fa fa-chevron-left'></i> Back
 					       		 </a>

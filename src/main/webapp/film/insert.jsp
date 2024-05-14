@@ -62,16 +62,26 @@
 								</div>
 								
 								<div class="col-md-3">
-									<label for="dataPubblicazioneFilm" class="form-label">Data Pubblicazione Film<span class="text-danger">*</span></label>
-									<input class="form-control"  name="dataPubblicazioneFilm" id="dataPubblicazioneFilm" type="date" placeholder="dd/MM/yy" title="formato : gg/mm/aaaa" 
+									<label for="data_pubblicazione" class="form-label">Data Pubblicazione Film<span class="text-danger">*</span></label>
+									<input class="form-control"  name="data_pubblicazione" id="data_pubblicazione" type="date" placeholder="dd/MM/yy" title="formato : gg/mm/aaaa" 
 										value="<%=filmInPagina.getDataPubblicazione()!=null? filmInPagina.getDataPubblicazione().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")):""  %>" required>
 								</div>
 							
 								<div class="col-md-6">
-									<label for="minutiDurata" class="form-label">Minuti Durata <span class="text-danger">*</span></label>
-									<input type="number" class="form-control" name="minutiDurata" id="minutiDurata" placeholder="Inserire i minuti di durata" 
+									<label for="minuti_durata" class="form-label">Minuti Durata <span class="text-danger">*</span></label>
+									<input type="number" class="form-control" name="minuti_durata" id="minuti_durata" placeholder="Inserire i minuti di durata" 
 									value="<%=filmInPagina.getMinutiDurata()!=null?filmInPagina.getMinutiDurata():""  %>" required/>
 								</div>
+								
+								<div class="col-md-6">
+                            <label for="id_regista" class="form-label">Regista <span class="text-danger">*</span></label>
+                            <select class="form-select" name="id_regista" id="id_regista" required>
+                                <option value="">Seleziona un regista</option>
+                                <% for (Regista regista : listaRegisti) { %>
+                                    <option value="<%= regista.getId() %>"><%= regista.getNome() %> <%= regista.getCognome() %></option>
+                                <% } %>
+                            </select>
+                        </div>
 								
 							<div class="col-12">
 								<button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary">Conferma</button>
