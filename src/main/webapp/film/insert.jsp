@@ -73,16 +73,6 @@
 									value="<%=filmInPagina.getMinutiDurata()!=null?filmInPagina.getMinutiDurata():""  %>" required/>
 								</div>
 								
-								<div class="col-md-6">
-                            <label for="id_regista" class="form-label">Regista <span class="text-danger">*</span></label>
-                            <select class="form-select" name="id_regista" id="id_regista" required>
-                                <option value="">Seleziona un regista</option>
-                                <% for (Regista regista : listaRegisti) { %>
-                                    <option value="<%= regista.getId() %>"><%= regista.getNome() %> <%= regista.getCognome() %></option>
-                                <% } %>
-                            </select>
-                        </div>
-								
 							<div class="col-12">
 								<button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary">Conferma</button>
 							</div>
