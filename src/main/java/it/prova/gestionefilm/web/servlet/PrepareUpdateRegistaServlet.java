@@ -24,19 +24,19 @@ public class PrepareUpdateRegistaServlet extends HttpServlet{
 
 		if (!NumberUtils.isCreatable(parametroIdRegistaToUpdate)) {
 			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			request.getRequestDispatcher("/errorPage.jsp").forward(request, response);
 			return;
 		}
 
 		try {
-			request.setAttribute("regista_da_modificare",
+			request.setAttribute("update_regista_attr",
 					MyServiceFactory.getRegistaServiceInstance().read(idRegistaToUpdate));
 		} catch (Exception e) {
 			e.printStackTrace();
 			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			request.getRequestDispatcher("/errorPage.jsp").forward(request, response);
 			return;
 		}
-		request.getRequestDispatcher("/regista/update.jsp").forward(request, response);
+		request.getRequestDispatcher("/regista/edit.jsp").forward(request, response);
 	}
 }

@@ -19,7 +19,7 @@
 			  <div class="container">
 			  	<h5>Visualizza dettaglio</h5>
 			  	</div>
-			  	<% Regista registaInPagina = (Regista)request.getAttribute("visualizza_regista_attr"); %>
+			  	<% Regista registaInPagina = (Regista)request.getAttribute("listaRegistaAttribute"); %>
 			  <div class='card-body'>
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Nome:</dt>

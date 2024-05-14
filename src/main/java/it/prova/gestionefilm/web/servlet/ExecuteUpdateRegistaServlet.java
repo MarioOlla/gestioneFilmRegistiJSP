@@ -23,16 +23,16 @@ public class ExecuteUpdateRegistaServlet extends HttpServlet{
 		String nomeInputParam = request.getParameter("nome");
 		String cognomeInputParam = request.getParameter("cognome");
 		String nicknameInputParam = request.getParameter("nickname");
-		String dataDiNascitaInputParam = request.getParameter("data_nascita");
-		String updateDateTimeInputParam = request.getParameter("data_aggiornamento");
+		String dataDiNascitaInputParam = request.getParameter("dataDiNascita");
+		String idRegistaParam = request.getParameter("idRegista");
 
-		Regista registaInstance = UtilityRegistaForm.updateRegistaFromParams(nomeInputParam, cognomeInputParam,
-				nicknameInputParam, dataDiNascitaInputParam, updateDateTimeInputParam);
+		Regista registaInstance = UtilityRegistaForm.updateRegistaFromParams(idRegistaParam,nomeInputParam, cognomeInputParam,
+				nicknameInputParam, dataDiNascitaInputParam);
 
 		if (!UtilityRegistaForm.validateRegistaBean(registaInstance)) {
 			request.setAttribute("update_regista_attr", registaInstance);
 			request.setAttribute("errorMessage", "Attenzione sono presenti errori di validazione.");
-			request.getRequestDispatcher("/regista/update.jsp").forward(request, response);
+			request.getRequestDispatcher("/regista/edit.jsp").forward(request, response);
 			return;
 		}
 		try {
@@ -42,7 +42,7 @@ public class ExecuteUpdateRegistaServlet extends HttpServlet{
 		} catch (Exception e) {
 			e.printStackTrace();
 			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			request.getRequestDispatcher("/errorPage.jsp").forward(request, response);
 			return;
 		}
 		request.getRequestDispatcher("/regista/results.jsp").forward(request, response);
