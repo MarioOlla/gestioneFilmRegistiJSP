@@ -26,7 +26,7 @@ public class ExecuteInsertFilmServlet extends HttpServlet{
 		String genereInputParam = request.getParameter("genere");
 		String dataPubblicazioneInputParam = request.getParameter("data_pubblicazione");
 		String minutiDurataInputParam = request.getParameter("minuti_durata");
-		String registaIdInputParam = request.getParameter("id_regista"); 
+//		String registaIdInputParam = request.getParameter("id_regista"); 
 //		String createDateTimeInputParam = request.getParameter("data_creazione"); 
 //		String updateDateTimeInputParam = request.getParameter("data_aggiornamento"); 
 		
@@ -47,19 +47,19 @@ public class ExecuteInsertFilmServlet extends HttpServlet{
 			return;
 		}
 		
-		try {
-			Regista registaInstance = MyServiceFactory.getRegistaServiceInstance().read(Long.parseLong(registaIdInputParam));
-            filmInstance.setRegisti(Arrays.asList(registaInstance));
-            
-			MyServiceFactory.getFilmServiceInstance().create(filmInstance); 
-			request.setAttribute("listaFilmAttribute", MyServiceFactory.getFilmServiceInstance().readAll()); 
-			request.setAttribute("successMessage", "Operazione effettuata con successo");
-		} catch (Exception e) {
-			e.printStackTrace();
-			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
-			return;
-		}
+//		try {
+//			Regista registaInstance = MyServiceFactory.getRegistaServiceInstance().read(Long.parseLong(registaIdInputParam));
+//            filmInstance.setRegisti(Arrays.asList(registaInstance));
+//            
+//			MyServiceFactory.getFilmServiceInstance().create(filmInstance); 
+//			request.setAttribute("listaFilmAttribute", MyServiceFactory.getFilmServiceInstance().readAll()); 
+//			request.setAttribute("successMessage", "Operazione effettuata con successo");
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
+//			request.getRequestDispatcher("/index.jsp").forward(request, response);
+//			return;
+//		}
 		request.getRequestDispatcher("/film/results.jsp").forward(request, response); 
 	}
 }
