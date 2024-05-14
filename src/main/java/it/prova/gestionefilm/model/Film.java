@@ -42,7 +42,7 @@ public class Film {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinTable(name = "regista_film", joinColumns = @JoinColumn(name = "id_film"), inverseJoinColumns = @JoinColumn(name = "id_regista"))
-	@JoinColumn(name = "id_regista", nullable = false)
+	@JoinColumn(name = "id_regista")
 	private Regista regista;
 
 	public Film() {

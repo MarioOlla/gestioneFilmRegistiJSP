@@ -12,7 +12,7 @@ import it.prova.gestionefilm.model.Film;
 public class UtilityFilmForm {
 
 	public static Film createFilmFromParams(String titoloInputParam, String genereInputParam, String dataPubblicazioneInputParam,
-			String minutiDurataInputParam, String createDateTimeInputParam, String updateDateTimeInputParam) {
+			String minutiDurataInputParam) {
 		
 		Film result = new Film(titoloInputParam, genereInputParam); 
 		
@@ -21,8 +21,6 @@ public class UtilityFilmForm {
 		}
 		
 		result.setDataPubblicazione(parseDataPubblicazioneFromString(dataPubblicazioneInputParam));
-		result.setCreateDateTime(parseCreateDateTimeFromString(createDateTimeInputParam));
-		result.setUpdateDateTime(parseUpdateDateFromString(updateDateTimeInputParam));
 
 		return result;
 	}

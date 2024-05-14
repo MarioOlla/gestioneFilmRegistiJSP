@@ -62,8 +62,8 @@
 								</div>
 								
 								<div class="col-md-3">
-									<label for="dataPubblicazioneFilm" class="form-label">Data Pubblicazione Film<span class="text-danger">*</span></label>
-									<input class="form-control"  name="dataPubblicazioneFilm" id="dataPubblicazioneFilm" type="date" placeholder="dd/MM/yy" title="formato : gg/mm/aaaa" 
+									<label for="dataPubblicazione" class="form-label">Data Pubblicazione Film<span class="text-danger">*</span></label>
+									<input class="form-control"  name="dataPubblicazione" id="dataPubblicazione" type="date" placeholder="dd/MM/yy" title="formato : gg/mm/aaaa" 
 										value="<%=filmInPagina.getDataPubblicazione()!=null? filmInPagina.getDataPubblicazione().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")):""  %>" required>
 								</div>
 							
