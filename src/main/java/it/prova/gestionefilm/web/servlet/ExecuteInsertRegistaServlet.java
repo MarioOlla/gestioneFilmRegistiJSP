@@ -40,7 +40,7 @@ public class ExecuteInsertRegistaServlet extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 				request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
-				request.getRequestDispatcher("/index.jsp").forward(request, response);
+				request.getRequestDispatcher("/errorPage.jsp").forward(request, response);
 				return;
 			}
 			request.getRequestDispatcher("/regista/results.jsp").forward(request, response); 

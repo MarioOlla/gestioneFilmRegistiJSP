@@ -46,7 +46,7 @@
 		
 							<form method="post" action="ExecuteUpdateRegistaServlet" class="row g-3" novalidate="novalidate">
 							
-								<% Regista registaInPagina = (Regista)request.getAttribute("regista_da_modificare"); %>
+								<% Regista registaInPagina = (Regista)request.getAttribute("update_regista_attr"); %>
 							
 								<div class="col-md-6">
 									<label for="nome" class="form-label">Nome <span class="text-danger">*</span></label>
