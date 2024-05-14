@@ -24,7 +24,7 @@ public class ListFilmServlet extends HttpServlet{
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
 			return;
 		}
-		request.getRequestDispatcher("/gestionefilm/results.jsp").forward(request, response);
+		request.getRequestDispatcher("/film/results.jsp").forward(request, response);
 	}
 	
 }

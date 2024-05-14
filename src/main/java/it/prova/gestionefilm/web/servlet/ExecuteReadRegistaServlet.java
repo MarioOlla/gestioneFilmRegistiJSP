@@ -15,6 +15,7 @@ import it.prova.gestionefilm.service.MyServiceFactory;
 @WebServlet("/ExecuteReadRegistaServlet")
 public class ExecuteReadRegistaServlet extends HttpServlet {
 
+
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
