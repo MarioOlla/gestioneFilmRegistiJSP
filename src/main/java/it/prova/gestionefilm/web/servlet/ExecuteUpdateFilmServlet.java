@@ -24,7 +24,7 @@ public class ExecuteUpdateFilmServlet extends HttpServlet{
 		String genereInputParam = request.getParameter("genere");
 		String dataPubblicazioneInputParam = request.getParameter("dataPubblicazione");
 		String minutiDurataInputParam = request.getParameter("minutiDurata");
-		String idFilmParam = request.getParameter("idFilm");
+		String idFilmParam = request.getParameter("idFilmToEdit");
 
 		Film filmInstance = UtilityFilmForm.updateFilmFromParams(idFilmParam,titoloInputParam, genereInputParam,
 				dataPubblicazioneInputParam, minutiDurataInputParam);
