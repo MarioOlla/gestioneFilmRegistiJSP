@@ -1,7 +1,6 @@
 package it.prova.gestionefilm.web.servlet;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -16,7 +15,7 @@ import it.prova.gestionefilm.service.MyServiceFactory;
 import it.prova.gestionefilm.utility.UtilityFilmForm;
 
 @WebServlet("/ExecuteInsertFilmServlet")
-public class ExecuteInsertFilmServlet extends HttpServlet{
+public class ExecuteInsertFilmServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
@@ -24,11 +23,8 @@ public class ExecuteInsertFilmServlet extends HttpServlet{
 		
 		String titoloInputParam = request.getParameter("titolo");
 		String genereInputParam = request.getParameter("genere");
-		String dataPubblicazioneInputParam = request.getParameter("data_pubblicazione");
-		String minutiDurataInputParam = request.getParameter("minuti_durata");
-//		String registaIdInputParam = request.getParameter("id_regista"); 
-//		String createDateTimeInputParam = request.getParameter("data_creazione"); 
-//		String updateDateTimeInputParam = request.getParameter("data_aggiornamento"); 
+		String dataPubblicazioneInputParam = request.getParameter("dataPubblicazione");
+		String minutiDurataInputParam = request.getParameter("minutiDurata");
 		
 		Film filmInstance = UtilityFilmForm.createFilmFromParams(titoloInputParam, genereInputParam, 
 				dataPubblicazioneInputParam, minutiDurataInputParam); 
@@ -45,21 +41,18 @@ public class ExecuteInsertFilmServlet extends HttpServlet{
 			request.setAttribute("errorMessage", "Attenzione sono presenti errori di validazione.");
 			request.getRequestDispatcher("/film/insert.jsp").forward(request, response);
 			return;
-		}
-		
-//		try {
-//			Regista registaInstance = MyServiceFactory.getRegistaServiceInstance().read(Long.parseLong(registaIdInputParam));
-//            filmInstance.setRegisti(Arrays.asList(registaInstance));
-//            
-//			MyServiceFactory.getFilmServiceInstance().create(filmInstance); 
-//			request.setAttribute("listaFilmAttribute", MyServiceFactory.getFilmServiceInstance().readAll()); 
-//			request.setAttribute("successMessage", "Operazione effettuata con successo");
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
-//			request.getRequestDispatcher("/index.jsp").forward(request, response);
-//			return;
-//		}
-		request.getRequestDispatcher("/film/results.jsp").forward(request, response); 
+		} try {
+				MyServiceFactory.getFilmServiceInstance().create(filmInstance); 
+				request.setAttribute("listFilmAttribute", MyServiceFactory.getFilmServiceInstance().readAll()); 
+				request.setAttribute("successMessage", "Operazione effettuata con successo");
+			} catch (Exception e) {
+				e.printStackTrace();
+				request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
+				request.getRequestDispatcher("/errorPage.jsp").forward(request, response);
+				return;
+			}
+			request.getRequestDispatcher("/film/results.jsp").forward(request, response); 
+
 	}
 }
+	

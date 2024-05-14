@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
         version="2.2">
 	<persistence-unit name="gestionefilm_unit" transaction-type="RESOURCE_LOCAL">
-		<class>it.prova.gestioneFilmRegistiJSP.model.*</class>
+		<class>it.prova.gestionefilm.model.*</class>
 		<properties>
 			<!-- setup con MySql -->
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />

@@ -62,14 +62,14 @@
 								</div>
 								
 								<div class="col-md-3">
-									<label for="data_pubblicazione" class="form-label">Data Pubblicazione Film<span class="text-danger">*</span></label>
-									<input class="form-control"  name="data_pubblicazione" id="data_pubblicazione" type="date" placeholder="dd/MM/yy" title="formato : gg/mm/aaaa" 
+									<label for="dataPubblicazione" class="form-label">Data Pubblicazione Film<span class="text-danger">*</span></label>
+									<input class="form-control"  name="dataPubblicazione" id="dataPubblicazione" type="date" placeholder="dd/MM/yy" title="formato : gg/mm/aaaa" 
 										value="<%=filmInPagina.getDataPubblicazione()!=null? filmInPagina.getDataPubblicazione().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")):""  %>" required>
 								</div>
 							
 								<div class="col-md-6">
-									<label for="minuti_durata" class="form-label">Minuti Durata <span class="text-danger">*</span></label>
-									<input type="number" class="form-control" name="minuti_durata" id="minuti_durata" placeholder="Inserire i minuti di durata" 
+									<label for="minutiDurata" class="form-label">Minuti Durata <span class="text-danger">*</span></label>
+									<input type="number" class="form-control" name="minutiDurata" id="minutiDurata" placeholder="Inserire i minuti di durata" 
 									value="<%=filmInPagina.getMinutiDurata()!=null?filmInPagina.getMinutiDurata():""  %>" required/>
 								</div>
 								

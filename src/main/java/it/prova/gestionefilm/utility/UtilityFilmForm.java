@@ -21,8 +21,6 @@ public class UtilityFilmForm {
 		}
 		
 		result.setDataPubblicazione(parseDataPubblicazioneFromString(dataPubblicazioneInputParam));
-//		result.setCreateDateTime(parseCreateDateTimeFromString(createDateTimeInputParam));
-//		result.setUpdateDateTime(parseUpdateDateFromString(updateDateTimeInputParam));
 
 		return result;
 	}
