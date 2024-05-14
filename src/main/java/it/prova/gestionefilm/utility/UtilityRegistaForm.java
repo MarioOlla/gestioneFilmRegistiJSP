@@ -1,10 +1,10 @@
 package it.prova.gestionefilm.utility;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeParseException;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 
 import it.prova.gestionefilm.model.Regista;
 
@@ -20,13 +20,14 @@ public class UtilityRegistaForm {
 		return result;
 	}
 
-	public static Regista updateRegistaFromParams(String nomeInputParam, String cognomeInputParam,
-			String nicknameInputParam, String dataDiNascitaInputParam, String updateDateTimeInputParam) {
+	public static Regista updateRegistaFromParams(String idInputParam,String nomeInputParam, String cognomeInputParam,
+			String nicknameInputParam, String dataDiNascitaInputParam) {
 
 		Regista result = new Regista(nomeInputParam, cognomeInputParam, nicknameInputParam);
-
+		if (NumberUtils.isCreatable(idInputParam)) {
+			result.setId(Long.parseLong(idInputParam));
+		}
 		result.setDataDiNascita(parseDataDiNascitaFromString(dataDiNascitaInputParam));
-		result.setUpdateDateTime(parseUpdateDateFromString(updateDateTimeInputParam));
 
 		return result;
 	}
@@ -34,7 +35,7 @@ public class UtilityRegistaForm {
 	public static boolean validateRegistaBean(Regista registaToBeValidate) {
 		if (StringUtils.isBlank(registaToBeValidate.getNome()) || StringUtils.isBlank(registaToBeValidate.getCognome())
 				|| StringUtils.isBlank(registaToBeValidate.getNickname())
-				|| registaToBeValidate.getDataDiNascita() == null ) {
+				|| registaToBeValidate.getDataDiNascita() == null) {
 			return false;
 		}
 		return true;
@@ -46,28 +47,6 @@ public class UtilityRegistaForm {
 
 		try {
 			return LocalDate.parse(dataDiNascitaInputParam);
-		} catch (DateTimeParseException e) {
-			return null;
-		}
-	}
-
-	public static LocalDateTime parseCreateDateTimeFromString(String createDateTimeInputParam) {
-		if (StringUtils.isBlank(createDateTimeInputParam))
-			return null;
-
-		try {
-			return LocalDateTime.parse(createDateTimeInputParam);
-		} catch (DateTimeParseException e) {
-			return null;
-		}
-	}
-
-	public static LocalDateTime parseUpdateDateFromString(String updateDateInputParam) {
-		if (StringUtils.isBlank(updateDateInputParam))
-			return null;
-
-		try {
-			return LocalDateTime.parse(updateDateInputParam);
 		} catch (DateTimeParseException e) {
 			return null;
 		}
