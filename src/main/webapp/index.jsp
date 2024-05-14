@@ -130,11 +130,11 @@
 						<svg class="bi" width="1em" height="1em">
 							<use xlink:href="#collection" /></svg>
 					</div>
-					<h2>Lista Elementi</h2>
+					<h2>Lista Registi</h2>
 					<p>Paragraph of text beneath the heading to explain the
 						heading. We'll add onto it with another sentence and probably just
 						keep going until we run out of words.</p>
-					<a href="ListProdottiServlet" class="icon-link"> Vai alla
+					<a href="ListRegistiServlet" class="icon-link"> Vai alla
 						funzionalità <svg class="bi" width="1em" height="1em">
 							<use xlink:href="#chevron-right" /></svg>
 					</a>
@@ -144,11 +144,11 @@
 						<svg class="bi" width="1em" height="1em">
 							<use xlink:href="#people-circle" /></svg>
 					</div>
-					<h2>Inserisci Nuovo</h2>
+					<h2>Inserisci Nuovo Regista</h2>
 					<p>Paragraph of text beneath the heading to explain the
 						heading. We'll add onto it with another sentence and probably just
 						keep going until we run out of words.</p>
-					<a href="PrepareInsertProdottoServlet" class="icon-link"> Vai
+					<a href="PrepareInsertRegistaServlet" class="icon-link"> Vai
 						alla funzionalità <svg class="bi" width="1em" height="1em">
 							<use xlink:href="#chevron-right" /></svg>
 					</a>
