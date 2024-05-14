@@ -48,7 +48,7 @@
                             </thead>
                             <tbody>
                                 <% 
-                                List<Regista> listaRegisti = (List<Regista>) request.getAttribute("listRegistiAttribute");
+                                List<Regista> listaRegisti = (List<Regista>) request.getAttribute("listaRegistaAttribute");
                                 if (listaRegisti != null) {
                                     for (Regista item : listaRegisti) {
                                 %>
@@ -59,7 +59,7 @@
                                     <td><%=item.getNickname() %></td>
                                     <td><%=item.getDataDiNascita()!=null? item.getDataDiNascita().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")):"N.D."%></td>
                                     <td>
-                                        <a class="btn btn-sm btn-outline-secondary" href="ExecuteVisualizzaRegistaServlet?idRegista=<%=item.getId() %>">Visualizza</a>
+                                        <a class="btn btn-sm btn-outline-secondary" href="ExecuteReadRegistaServlet?idRegista=<%=item.getId() %>">Visualizza</a>
                                         <a class="btn btn-sm btn-outline-primary ml-2 mr-2" href="PrepareEditRegistaServlet?idRegista=<%=item.getId() %>">Edit</a>
                                         <a class="btn btn-outline-danger btn-sm" href="PrepareDeleteRegistaServlet?idRegista=<%=item.getId() %>">Delete</a>
                                     </td>

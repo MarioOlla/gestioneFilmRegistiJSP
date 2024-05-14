@@ -11,14 +11,11 @@ import it.prova.gestionefilm.model.Regista;
 public class UtilityRegistaForm {
 
 	public static Regista createRegistaFromParams(String nomeInputParam, String cognomeInputParam,
-			String nicknameInputParam, String dataDiNascitaInputParam, String createDateTimeInputParam,
-			String updateDateTimeInputParam) {
+			String nicknameInputParam, String dataDiNascitaInputParam) {
 
 		Regista result = new Regista(nomeInputParam, cognomeInputParam, nicknameInputParam);
 
 		result.setDataDiNascita(parseDataDiNascitaFromString(dataDiNascitaInputParam));
-		result.setCreateDateTime(parseCreateDateTimeFromString(createDateTimeInputParam));
-		result.setUpdateDateTime(parseUpdateDateFromString(updateDateTimeInputParam));
 
 		return result;
 	}
@@ -37,8 +34,7 @@ public class UtilityRegistaForm {
 	public static boolean validateRegistaBean(Regista registaToBeValidate) {
 		if (StringUtils.isBlank(registaToBeValidate.getNome()) || StringUtils.isBlank(registaToBeValidate.getCognome())
 				|| StringUtils.isBlank(registaToBeValidate.getNickname())
-				|| registaToBeValidate.getDataDiNascita() == null || registaToBeValidate.getCreateDateTime() == null
-				|| registaToBeValidate.getUpdateDateTime() == null) {
+				|| registaToBeValidate.getDataDiNascita() == null ) {
 			return false;
 		}
 		return true;
