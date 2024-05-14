@@ -25,17 +25,19 @@ public class UtilityFilmForm {
 		return result;
 	}
 
-	public static Film updateFilmFromParams(String titoloInputParam, String genereInputParam, String dataPubblicazioneInputParam,
-			String minutiDurataInputParam, String updateDateTimeInputParam) {
+	public static Film updateFilmFromParams(String idInputParam,String titoloInputParam, String genereInputParam, String dataPubblicazioneInputParam,
+			String minutiDurataInputParam) {
 
 		Film result = new Film(titoloInputParam, genereInputParam);
 
 		if (NumberUtils.isCreatable(minutiDurataInputParam)) {
 			result.setMinutiDurata(Integer.parseInt(minutiDurataInputParam));
 		}
+		if (NumberUtils.isCreatable(idInputParam)) {
+			result.setId(Long.parseLong(idInputParam));
+		}
 
 		result.setDataPubblicazione(parseDataPubblicazioneFromString(dataPubblicazioneInputParam));
-		result.setUpdateDateTime(parseUpdateDateFromString(updateDateTimeInputParam));
 		
 		return result; 
 	}
@@ -45,8 +47,6 @@ public class UtilityFilmForm {
 			|| StringUtils.isBlank(filmToBeValidate.getGenere())
 			|| filmToBeValidate.getDataPubblicazione() == null
 			|| filmToBeValidate.getMinutiDurata()<=0 
-//			|| filmToBeValidate.getCreateDateTime() == null
-//			|| filmToBeValidate.getUpdateDateTime() == null
 			){
 			return false;
 		}
@@ -64,27 +64,6 @@ public class UtilityFilmForm {
 		}
 	}
 	
-	public static LocalDateTime parseCreateDateTimeFromString(String createDateTimeInputParam) {
-		if (StringUtils.isBlank(createDateTimeInputParam))
-			return null;
-
-		try {
-			return LocalDateTime.parse(createDateTimeInputParam);
-		} catch (DateTimeParseException e) {
-			return null;
-		}
-	}
-	
-	public static LocalDateTime parseUpdateDateFromString(String updateDateInputParam) {
-		if (StringUtils.isBlank(updateDateInputParam))
-			return null;
-
-		try {
-			return LocalDateTime.parse(updateDateInputParam);
-		} catch (DateTimeParseException e) {
-			return null;
-		}
-	}
 	
 	
 }
