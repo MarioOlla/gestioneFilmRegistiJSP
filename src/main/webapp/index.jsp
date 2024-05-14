@@ -10,7 +10,7 @@
 <!-- Custom styles per le features di bootstrap 'Columns with icons' -->
 <link href="./assets/css/features.css" rel="stylesheet">
 
-<title>Gestione Prodotti</title>
+<title>Gestione Film e Registi</title>
 </head>
 <body class="d-flex flex-column h-100">
 
@@ -66,8 +66,8 @@
 					<p class="col-md-8 fs-4">Using a series of utilities, you can
 						create this jumbotron, just like the one in previous versions of
 						Bootstrap.</p>
-					<a class="btn btn-primary btn-lg" href="ListProdottiServlet">Lista
-						Elementi</a>
+					<a class="btn btn-primary btn-lg" href="ListFilmServlet">Lista
+						Film</a>
 				</div>
 			</div>
 
@@ -101,7 +101,7 @@
 					<p>Paragraph of text beneath the heading to explain the
 						heading. We'll add onto it with another sentence and probably just
 						keep going until we run out of words.</p>
-					<a href="PrepareInsertProdottoServlet" class="icon-link"> Vai
+					<a href="PrepareInsertFilmServlet" class="icon-link"> Vai
 						alla funzionalità <svg class="bi" width="1em" height="1em">
 							<use xlink:href="#chevron-right" /></svg>
 					</a>
