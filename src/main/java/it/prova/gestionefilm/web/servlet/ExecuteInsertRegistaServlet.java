@@ -22,11 +22,9 @@ public class ExecuteInsertRegistaServlet extends HttpServlet {
 			String nomeInputParam = request.getParameter("nome");
 			String cognomeInputParam = request.getParameter("cognome");
 			String nicknameInputParam = request.getParameter("nickname");
-			String dataDiNascitaInputParam = request.getParameter("data_di_nascita");
-			String createDateTimeInputParam = request.getParameter("data_creazione"); 
-			String updateDateTimeInputParam = request.getParameter("data_aggiornamento"); 
+			String dataDiNascitaInputParam = request.getParameter("dataDiNascita");
 			
-			Regista registaInstance = UtilityRegistaForm.createRegistaFromParams(nomeInputParam, cognomeInputParam, nicknameInputParam, dataDiNascitaInputParam, createDateTimeInputParam, updateDateTimeInputParam);
+			Regista registaInstance = UtilityRegistaForm.createRegistaFromParams(nomeInputParam, cognomeInputParam, nicknameInputParam, dataDiNascitaInputParam);
 			
 			if (!UtilityRegistaForm.validateRegistaBean(registaInstance)) {
 				request.setAttribute("insert_regista_attr", registaInstance);

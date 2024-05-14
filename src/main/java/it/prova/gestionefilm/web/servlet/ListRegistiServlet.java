@@ -19,7 +19,7 @@ public class ListRegistiServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-			request.setAttribute("listRegistiAttribute", MyServiceFactory.getRegistaServiceInstance().readAll());
+			request.setAttribute("listaRegistaAttribute", MyServiceFactory.getRegistaServiceInstance().readAll());
 		}catch(Exception e) {
 			e.printStackTrace();
 			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
