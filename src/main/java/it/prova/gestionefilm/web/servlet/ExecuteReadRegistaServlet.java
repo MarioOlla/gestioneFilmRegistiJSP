@@ -24,11 +24,11 @@ public class ExecuteReadRegistaServlet extends HttpServlet {
 
 		if (!NumberUtils.isCreatable(idRegistaParam)) {
 			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			request.getRequestDispatcher("/errorPage.jsp").forward(request, response);
 			return;
 		}
 		try {
-			request.setAttribute("visualizza_regista_attr",
+			request.setAttribute("listaRegistaAttribute",
 					MyServiceFactory.getRegistaServiceInstance().read(Long.parseLong(idRegistaParam)));
 		} catch (Exception e) {
 			e.printStackTrace();
