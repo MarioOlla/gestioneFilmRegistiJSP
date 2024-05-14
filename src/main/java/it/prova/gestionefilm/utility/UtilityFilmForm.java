@@ -12,7 +12,7 @@ import it.prova.gestionefilm.model.Film;
 public class UtilityFilmForm {
 
 	public static Film createFilmFromParams(String titoloInputParam, String genereInputParam, String dataPubblicazioneInputParam,
-			String minutiDurataInputParam, String createDateTimeInputParam, String updateDateTimeInputParam) {
+			String minutiDurataInputParam) {
 		
 		Film result = new Film(titoloInputParam, genereInputParam); 
 		
@@ -21,8 +21,8 @@ public class UtilityFilmForm {
 		}
 		
 		result.setDataPubblicazione(parseDataPubblicazioneFromString(dataPubblicazioneInputParam));
-		result.setCreateDateTime(parseCreateDateTimeFromString(createDateTimeInputParam));
-		result.setUpdateDateTime(parseUpdateDateFromString(updateDateTimeInputParam));
+//		result.setCreateDateTime(parseCreateDateTimeFromString(createDateTimeInputParam));
+//		result.setUpdateDateTime(parseUpdateDateFromString(updateDateTimeInputParam));
 
 		return result;
 	}
@@ -47,8 +47,9 @@ public class UtilityFilmForm {
 			|| StringUtils.isBlank(filmToBeValidate.getGenere())
 			|| filmToBeValidate.getDataPubblicazione() == null
 			|| filmToBeValidate.getMinutiDurata()<=0 
-			|| filmToBeValidate.getCreateDateTime() == null
-			|| filmToBeValidate.getUpdateDateTime() == null){
+//			|| filmToBeValidate.getCreateDateTime() == null
+//			|| filmToBeValidate.getUpdateDateTime() == null
+			){
 			return false;
 		}
 		return true; 

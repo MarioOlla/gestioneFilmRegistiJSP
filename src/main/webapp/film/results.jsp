@@ -59,9 +59,9 @@
                                     <td><%=item.getDataPubblicazione()!=null? item.getDataPubblicazione().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")):"N.D."%></td>
                                     <td><%=item.getMinutiDurata() %></td>
                                     <td>
-                                        <a class="btn btn-sm btn-outline-secondary" href="ExecuteVisualizzaFilmServlet?idFilm=<%=item.getId() %>">Visualizza</a>
-                                        <a class="btn btn-sm btn-outline-primary ml-2 mr-2" href="PrepareEditFilmServlet?idFilm=<%=item.getId() %>">Edit</a>
-                                        <a class="btn btn-outline-danger btn-sm" href="PrepareDeleteFilmServlet?idFilm=<%=item.getId() %>">Delete</a>
+                                        <a class="btn btn-sm btn-outline-secondary" href="ExecuteReadFilmServlet?idFilm=<%=item.getId() %>">Visualizza</a>
+                                        <a class="btn btn-sm btn-outline-primary ml-2 mr-2" href="PrepareUpdateFilmServlet?idFilm=<%=item.getId() %>">Edit</a>
+                                        <a class="btn btn-outline-danger btn-sm" href="PrepareRemoveFilmServlet?idFilm=<%=item.getId() %>">Delete</a>
                                     </td>
                                 </tr>
                                 <% 
