@@ -19,7 +19,7 @@ public class ExecuteRemoveFilmServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String parametroIdFilmToRemove = request.getParameter("idFilm");
+		String parametroIdFilmToRemove = request.getParameter("idFilmToRemove");
 		Long idFilmToRemove = Long.parseLong(parametroIdFilmToRemove);
 
 		if (!NumberUtils.isCreatable(parametroIdFilmToRemove)) {
@@ -29,11 +29,11 @@ public class ExecuteRemoveFilmServlet extends HttpServlet{
 		}
 		try {
 			MyServiceFactory.getFilmServiceInstance().delete(idFilmToRemove);
-			request.setAttribute("listaFilmAttribute", MyServiceFactory.getFilmServiceInstance().readAll());
+			request.setAttribute("listFilmAttribute", MyServiceFactory.getFilmServiceInstance().readAll());
 		} catch (Exception e) {
 			e.printStackTrace();
 			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			request.getRequestDispatcher("/errorPage.jsp").forward(request, response);
 			return;
 		}
 		request.getRequestDispatcher("/film/results.jsp").forward(request, response);

@@ -27,15 +27,15 @@ public class PrepareRemoveFilmServlet extends HttpServlet{
 			return;
 		}
 		try {
-			request.setAttribute("film_to_remove",
+			request.setAttribute("visualizza_film_attr",
 					MyServiceFactory.getFilmServiceInstance().read(Long.parseLong(parametroIdFilmToRemove)));
 		} catch (Exception e) {
 			e.printStackTrace();
 			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			request.getRequestDispatcher("/errorPage.jsp").forward(request, response);
 			return;
 		}
-		request.getRequestDispatcher("/index.jsp").forward(request, response);
+		request.getRequestDispatcher("/film/delete.jsp").forward(request, response);
 	}
 
 }
