@@ -23,18 +23,18 @@ public class PrepareUpdateFilmServlet extends HttpServlet{
 		
 		if (!NumberUtils.isCreatable(parametroIdFilmToUpdate)) {
 			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			request.getRequestDispatcher("/errorPage.jsp").forward(request, response);
 			return;
 		}
 		
 		try {
-			request.setAttribute("film_da_modificare", MyServiceFactory.getFilmServiceInstance().read(idFilmToUpdate)); 
+			request.setAttribute("filmDaInviareAPaginaEdit", MyServiceFactory.getFilmServiceInstance().read(idFilmToUpdate)); 
 		} catch (Exception e) {
 			e.printStackTrace();
 			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
 			return;
 		}
-		request.getRequestDispatcher("/film/update.jsp").forward(request, response); 
+		request.getRequestDispatcher("/film/edit.jsp").forward(request, response); 
 	}
 }
