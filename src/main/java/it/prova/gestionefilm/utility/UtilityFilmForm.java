@@ -45,8 +45,9 @@ public class UtilityFilmForm {
 			|| StringUtils.isBlank(filmToBeValidate.getGenere())
 			|| filmToBeValidate.getDataPubblicazione() == null
 			|| filmToBeValidate.getMinutiDurata()<=0 
-			|| filmToBeValidate.getCreateDateTime() == null
-			|| filmToBeValidate.getUpdateDateTime() == null){
+//			|| filmToBeValidate.getCreateDateTime() == null
+//			|| filmToBeValidate.getUpdateDateTime() == null
+			){
 			return false;
 		}
 		return true; 

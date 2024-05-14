@@ -18,7 +18,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name="regista")
+@Table(name = "regista")
 public class Regista {
 
 	@Id
@@ -26,26 +26,26 @@ public class Regista {
 	@Column(name = "id")
 	private Long id;
 	@Column(name = "nome")
-	private String nome; 
+	private String nome;
 	@Column(name = "cognome")
-	private String cognome; 
+	private String cognome;
 	@Column(name = "nickname")
-	private String nickname; 
+	private String nickname;
 	@Column(name = "data_di_nascita")
-	private LocalDate dataDiNascita; 
-	
+	private LocalDate dataDiNascita;
+
 	@CreationTimestamp
 	private LocalDateTime createDateTime;
 	@UpdateTimestamp
 	private LocalDateTime updateDateTime;
-	
+
 	@OneToMany(mappedBy = "regista", fetch = FetchType.LAZY)
-	private Set<Film> films = new HashSet<>(); 
-	
+	private Set<Film> films = new HashSet<>();
+
 	public Regista() {
-		
+
 	}
-	
+
 	public Regista(Long id, String nome, String cognome, String nickname, LocalDate dataDiNascita,
 			LocalDateTime createDateTime, LocalDateTime updateDateTime) {
 		this.id = id;
@@ -56,12 +56,20 @@ public class Regista {
 		this.createDateTime = createDateTime;
 		this.updateDateTime = updateDateTime;
 	}
+	
+	public Regista(Long id, String nome, String cognome, String nickname, LocalDate dataDiNascita) {
+		this.id = id;
+		this.nome = nome;
+		this.cognome = cognome;
+		this.nickname = nickname;
+		this.dataDiNascita = dataDiNascita;
+	}
 
-public Regista(String nome, String cognome, String nickname) {
-    this.nome = nome;
-    this.cognome = cognome;
-    this.nickname = nickname;
-}
+	public Regista(String nome, String cognome, String nickname) {
+		this.nome = nome;
+		this.cognome = cognome;
+		this.nickname = nickname;
+	}
 
 	public Long getId() {
 		return id;
@@ -126,5 +134,5 @@ public Regista(String nome, String cognome, String nickname) {
 	public void setFilms(Set<Film> films) {
 		this.films = films;
 	}
-	
+
 }
